@@ -1,36 +1,41 @@
 import React from "react";
+import { motion, useInView } from "framer-motion";
 
 const ProductDetails = () => {
+  const slideUp = {
+    initial: { y: "100%" },
+    open: { y: "0%", transition: { duration: 0.2 } },
+    closed: { y: "20%", transition: { duration: 0.2 } },
+  };
+
+  const descriptionRef = React.useRef(null);
+  const isInView = useInView(descriptionRef);
+
   return (
     <div className="bg-black p-12">
-      <div className="container mx-auto">
+      <div className="mx-auto">
         <div className="px-6 text-center text-white md:px-12">
-          <h1 className="mt-2 mb-16 text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl">
-            Caja Digital 12000 <br />
-            <span className="text-lg">Vape Desechable con Indicador LED</span>
+          <h1 className="mt-2 mb-10 text-4xl font-bold tracking-tight md:text-6xl xl:text-4xl">
+            Fumot 12000 <br />
+            
           </h1>
         </div>
         <div className="text-white max-w-4xl mx-auto">
-          <p className="mb-8">
-            Fumot Caja Digital 12000 es un vape desechable recargable que cuenta con un indicador LED, con indicadores tanto para los niveles de aceite como para la energía. De manera conveniente, se puede cargar a través del puerto Tipo-C en su base.
-          </p>
-          <p className="mb-8">
-            Prellenado con 20 ml de e-líquido, está disponible en cuatro opciones de contenido de nicotina: 0%, 2%, 3% y 5%. Este vape proporciona hasta 12,000 puffs para su disfrute.
-          </p>
-          {/* <div className="flex justify-center items-center p-2 m-2">
-            <div className="">
-              <img src="/battery.png" alt="Battery" className="h-24 pl-8" />
-              <p className="text-white mt-2">Indicador de Encendido</p>
-            </div>
-            <div className="text-center">
-              <img src="/liquid.png" alt="Liquid" className="h-24" />
-              <p className="text-white mt-2">Indicador de Líquido</p>
-            </div>
-            <div className="text-center">
-              <img src="/smoke.png" alt="Smoke" className="h-24" />
-              <p className="text-white mt-2">12 Caladas</p>
-            </div>
-          </div> */}
+          <motion.p 
+          ref={descriptionRef}
+          variants={slideUp}
+          animate={isInView ? "open" : "closed"}
+          className="mb-8 text-gray-500 text-3xl">
+            Fumot 12000 es un vape desechable recargable que cuenta con un indicador LED, con indicadores tanto para los niveles de aceite como para la energía. De manera conveniente, se puede cargar a través del puerto Tipo-C en su base.
+          </motion.p>
+          <motion.p
+            ref={descriptionRef}
+            variants={slideUp}
+            animate={isInView ? "open" : "closed"}
+            className="mb-8 text-gray-500 text-2xl"
+          >
+            Prellenado con 20 ml de e-líquido, este vape proporciona hasta 12,000 puffs para su disfrute.
+          </motion.p>
         </div>
       </div>
     </div>

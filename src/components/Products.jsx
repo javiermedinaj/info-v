@@ -6,10 +6,10 @@ const Products = () => {
 
   return (
     <div className="bg-black">
-    <p className="text-center text-6xl text-neutral-400 py-8">Nuestros Productos</p>
+      <p className="flex justify-center text-m-2 uppercase tracking-[8px] py-8 text-gray-500 text-6x1">Nuestros Productos</p>
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 px-4 py-8 bg-black">
       {products.map((product) => (
-        <div key={product.id} className="text-center bg-gray-100 rounded-lg p-4">
+        <div key={product.id} className="text-center bg-black-900 rounded-lg p-4">
           <h2 className="text-lg font-bold mb-2">{product.name}</h2>
           <img
             src={product.image}
