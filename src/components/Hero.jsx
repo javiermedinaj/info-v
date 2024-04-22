@@ -10,7 +10,7 @@ const Contact = () => {
         className="absolute h-full w-full object-cover"
         playsInline
       >
-        <source src="/vapes.mp4" type="video/mp4" />
+        <source src="/vapes1.mp4" type="video/mp4" />
         Tu navegador no soporta el elemento de video.
       </video>
       <div className="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-[hsla(0,0%,0%,0.75)] bg-fixed flex items-center justify-center">
