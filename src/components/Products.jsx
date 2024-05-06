@@ -28,7 +28,7 @@ const Products = forwardRef((props, ref) => {
               <p className="text-gray-300">{product.description}</p>
               <button className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                 <a
-                  href="https://wa.link/vzf064"
+                  href="#"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
